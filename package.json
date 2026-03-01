@@ -1,0 +1,12 @@
+{
+  "name": "mobile-usage-predictor-slr",
+  "version": "1.0.0",
+  "description": "Premium Mobile Usage Predictor with SLR",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

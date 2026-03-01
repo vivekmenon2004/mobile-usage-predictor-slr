@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Predictor | AI-Powered Usage Insights</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: '#ff6b6b',
+                        background: {
+                            light: '#fdfdfd',
+                            dark: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans selection:bg-primary-100 transition-colors duration-300">
+    <!-- Navbar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div
+                    class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined filled">monitoring</span>
+                </div>
+                <span
+                    class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300">Newslr<span
+                        class="text-primary-600">.</span></span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#how-it-works" class="text-sm font-medium hover:text-primary-600 transition-colors">How it
+                    Works</a>
+                <a href="#predictor" class="text-sm font-medium hover:text-primary-600 transition-colors">Predict</a>
+                <a href="#why-slr" class="text-sm font-medium hover:text-primary-600 transition-colors">Methodology</a>
+                <button
+                    class="px-6 py-2.5 rounded-full bg-slate-900 dark:bg-white dark:text-slate-900 text-white text-sm font-bold hover:shadow-xl transition-all hover:-translate-y-0.5">Explore
+                    Beta</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+            <div
+                class="absolute -top-24 -right-24 w-96 h-96 bg-primary-500/10 rounded-full blur-[120px] animate-pulse-slow">
+            </div>
+            <div
+                class="absolute top-1/2 -left-24 w-80 h-80 bg-indigo-500/10 rounded-full blur-[100px] animate-pulse-slow">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative z-10 space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 dark:bg-primary-900/20 text-primary-600 text-sm font-semibold border border-primary-100 dark:border-primary-800">
+                        <span class="flex h-2 w-2 rounded-full bg-primary-600 animate-ping"></span>
+                        AI Engine V2.0 Active
+                    </div>
+                    <h1
+                        class="text-6xl lg:text-8xl font-black leading-[1] tracking-tighter text-slate-900 dark:text-white">
+                        Predict Your <span class="text-primary-600">Digital</span> Footprint.
+                    </h1>
+                    <p class="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+                        Precision-engineered Simple Linear Regression model to help you understand and optimize your
+                        daily data consumption habits.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="#predictor"
+                            class="px-8 py-4 rounded-2xl bg-primary-600 text-white font-bold text-lg hover:shadow-2xl shadow-primary-500/40 hover:scale-105 transition-all">Start
+                            Predicting</a>
+                        <button
+                            class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="glass-container p-4 rounded-[40px] border border-white/20 shadow-2xl bg-white/5 backdrop-blur-sm">
+                        <div
+                            class="relative aspect-square rounded-[30px] overflow-hidden bg-white dark:bg-slate-900 shadow-inner flex items-center justify-center">
+                            <!-- Dashboard UI Mockup -->
+                            <img src="https://images.unsplash.com/photo-1551288049-bbbda5366391?auto=format&fit=crop&q=80&w=1000"
+                                alt="Data Dashboard"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-60">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-900 via-transparent">
+                            </div>
+
+                            <div
+                                class="absolute bottom-8 left-8 right-8 p-6 glass-card rounded-2xl border border-white/40 dark:border-white/10">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="font-bold text-lg">Trend Analysis</h4>
+                                    <span
+                                        class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-md font-bold">+12%
+                                        Accuracy</span>
+                                </div>
+                                <div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full w-[85%] bg-primary-600"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Predictor Section -->
+        <section id="predictor" class="py-24 bg-slate-50 dark:bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-extrabold mb-8">Run the <span
+                            class="text-primary-600">Model</span></h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
+                        Input your average daily mobile usage hours. Our SLR algorithm, trained on thousands of data
+                        points, will instantly calculate your estimated consumption in GB.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div
+                            class="predictor-card p-10 rounded-[40px] bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-2xl shadow-slate-200/50 dark:shadow-none">
+                            <label class="block text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Daily
+                                Usage Hours</label>
+                            <div class="relative group">
+                                <input type="number" id="usage-input" placeholder="0.0" step="0.1" min="0" max="24"
+                                    class="w-full text-5xl font-black bg-slate-50 dark:bg-slate-900 border-none rounded-3xl p-8 focus:ring-4 ring-primary-500/10 transition-all placeholder:text-slate-300">
+                                <div
+                                    class="absolute right-8 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-xl uppercase">
+                                    Hrs</div>
+                            </div>
+
+                            <button id="calc-btn"
+                                class="w-full mt-8 py-5 rounded-3xl bg-slate-900 dark:bg-primary-600 text-white font-bold text-xl hover:scale-[1.02] transition-all shadow-xl active:scale-95">Calculate
+                                Prediction</button>
+
+                            <div
+                                class="mt-12 p-8 rounded-3xl bg-primary-50 dark:bg-primary-900/10 border border-primary-100 dark:border-primary-800/50">
+                                <p class="text-sm font-bold text-primary-600 uppercase mb-2">Predicted Consumption</p>
+                                <div class="flex items-baseline gap-2">
+                                    <span id="result-value"
+                                        class="text-5xl font-black text-slate-900 dark:text-white">0.00</span>
+                                    <span class="text-xl font-bold text-slate-500">GB / Day</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <div
+                        class="h-[400px] w-full bg-white dark:bg-slate-800 rounded-[40px] p-8 shadow-xl border border-slate-100 dark:border-slate-700">
+                        <canvas id="usageChart"></canvas>
+                    </div>
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div
+                            class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                            <span class="text-slate-400 text-sm font-medium">Slope (β₁)</span>
+                            <p class="text-2xl font-bold">0.85 <span
+                                    class="text-sm font-normal text-slate-400">GB/hr</span></p>
+                        </div>
+                        <div
+                            class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                            <span class="text-slate-400 text-sm font-medium">Intercept (β₀)</span>
+                            <p class="text-2xl font-bold">0.20 <span
+                                    class="text-sm font-normal text-slate-400">GB</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="why-slr" class="py-24">
+            <div class="max-w-7xl mx-auto px-6 text-center mb-20">
+                <h2 class="text-4xl font-extrabold mb-4">The Science of Simplificaton</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Our Simplified Linear Regression model focuses on the most
+                    critical variable to deliver maximum accuracy with minimal data input.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="p-10 rounded-[40px] bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all">
+                    <div
+                        class="h-16 w-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-8">
+                        <span class="material-symbols-outlined text-3xl">bolt</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Lighning Fast</h3>
+                    <p class="text-slate-500">Processing happens in locally, delivering results in under 2ms for an
+                        instant experience.</p>
+                </div>
+                <div
+                    class="p-10 rounded-[40px] bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all">
+                    <div
+                        class="h-16 w-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center text-emerald-600 mb-8">
+                        <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Engineered Intercept</h3>
+                    <p class="text-slate-500">We account for background sync, push notifications, and system updates
+                        even when idle.</p>
+                </div>
+                <div
+                    class="p-10 rounded-[40px] bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all">
+                    <div
+                        class="h-16 w-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 mb-8">
+                        <span class="material-symbols-outlined text-3xl">show_chart</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Dynamic Viz</h3>
+                    <p class="text-slate-500">Watch your prediction land on the regression line in real-time with our
+                        interactive plotting.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div
+                    class="h-8 w-8 rounded-lg bg-slate-900 dark:bg-white flex items-center justify-center text-white dark:text-slate-900">
+                    <span class="material-symbols-outlined text-sm">monitoring</span>
+                </div>
+                <span class="font-bold">Newslr</span>
+            </div>
+            <p class="text-slate-400 text-sm">2026 Mobile Predictive Systems. Built by Vivek</p>
+            <div class="flex gap-6 text-sm font-medium text-slate-500">
+                <a href="#" class="hover:text-primary-600">Privacy</a>
+                <a href="#" class="hover:text-primary-600">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
